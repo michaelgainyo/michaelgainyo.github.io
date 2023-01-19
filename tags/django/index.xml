@@ -6,7 +6,17 @@
     <description>Recent content in django on %_</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Jan 2023 23:18:45 +0100</lastBuildDate><atom:link href="https://michaelgainyo.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Jan 2023 12:15:43 +0100</lastBuildDate><atom:link href="https://michaelgainyo.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting Up A Custom Domain Name for Django Development Server on a Mac</title>
+      <link>https://michaelgainyo.github.io/blog/setting-up-custom-domain-name-for-django-dev-server-on-mac/</link>
+      <pubDate>Thu, 19 Jan 2023 12:15:43 +0100</pubDate>
+      
+      <guid>https://michaelgainyo.github.io/blog/setting-up-custom-domain-name-for-django-dev-server-on-mac/</guid>
+      <description>Setting up a custom domain name for the Django development server on a Mac is a simple process that can be completed in a few steps.
+Make sure that the Django development server is running on your local machine by navigating to the root directory of your Django project and running the following command: ./manage.py runserver Open the terminal and edit the /etc/hosts file by running the command: sudo nano /etc/hosts This file is used to map hostnames to IP addresses on a local machine.</description>
+    </item>
+    
     <item>
       <title>Dynamic Serialization With Django Rest Framework</title>
       <link>https://michaelgainyo.github.io/blog/dynamic-serialization-with-django-rest-framework/</link>

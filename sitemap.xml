@@ -3,13 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://michaelgainyo.github.io/</loc>
-    <lastmod>2023-01-09T23:18:45+01:00</lastmod>
+    <lastmod>2023-01-19T12:15:43+01:00</lastmod>
   </url><url>
     <loc>https://michaelgainyo.github.io/blog/</loc>
-    <lastmod>2023-01-09T23:18:45+01:00</lastmod>
+    <lastmod>2023-01-19T12:15:43+01:00</lastmod>
   </url><url>
     <loc>https://michaelgainyo.github.io/tags/django/</loc>
-    <lastmod>2023-01-09T23:18:45+01:00</lastmod>
+    <lastmod>2023-01-19T12:15:43+01:00</lastmod>
+  </url><url>
+    <loc>https://michaelgainyo.github.io/tags/nginx/</loc>
+    <lastmod>2023-01-19T12:15:43+01:00</lastmod>
+  </url><url>
+    <loc>https://michaelgainyo.github.io/blog/setting-up-custom-domain-name-for-django-dev-server-on-mac/</loc>
+    <lastmod>2023-01-19T12:15:43+01:00</lastmod>
+  </url><url>
+    <loc>https://michaelgainyo.github.io/tags/</loc>
+    <lastmod>2023-01-19T12:15:43+01:00</lastmod>
   </url><url>
     <loc>https://michaelgainyo.github.io/tags/drf/</loc>
     <lastmod>2023-01-09T23:18:45+01:00</lastmod>
@@ -18,9 +27,6 @@
     <lastmod>2023-01-09T23:18:45+01:00</lastmod>
   </url><url>
     <loc>https://michaelgainyo.github.io/tags/python/</loc>
-    <lastmod>2023-01-09T23:18:45+01:00</lastmod>
-  </url><url>
-    <loc>https://michaelgainyo.github.io/tags/</loc>
     <lastmod>2023-01-09T23:18:45+01:00</lastmod>
   </url><url>
     <loc>https://michaelgainyo.github.io/categories/</loc>

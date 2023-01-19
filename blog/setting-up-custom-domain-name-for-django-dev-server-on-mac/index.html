@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Setting Up A Custom Domain Name for Django Development Server on a Mac - %_</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="A step-by-step guide on setting up a custom domain name locally, including instructions for using nginx" />
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="Setting Up A Custom Domain Name for Django Development Server on a Mac" />
+<meta property="og:description" content="A step-by-step guide on setting up a custom domain name locally, including instructions for using nginx" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://michaelgainyo.github.io/blog/setting-up-custom-domain-name-for-django-dev-server-on-mac/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-01-19T12:15:43+01:00" />
+<meta property="article:modified_time" content="2023-01-19T12:15:43+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setting Up A Custom Domain Name for Django Development Server on a Mac"/>
+<meta name="twitter:description" content="A step-by-step guide on setting up a custom domain name locally, including instructions for using nginx"/>
+<script src="https://michaelgainyo.github.io/js/feather.min.js"></script>
+	
+	
+        <link href="https://michaelgainyo.github.io/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://michaelgainyo.github.io/css/main.ac08a4c9714baa859217f92f051deb58df2938ec352b506df655005dcaf98cc0.css" />
+
+	
+	
+
+	
+	
+	
+	
+		
+		
+		<link rel="stylesheet" type="text/css" href="https://michaelgainyo.github.io/css/base.4d64f8cb88deada53cb9d381673da3dc687ecaecb8083ef5a84099f4b55b1a49.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://michaelgainyo.github.io/">%_</a>
+	</div>
+	<nav>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<div class="meta">Jan 19, 2023</div>
+			<h1 class="title">Setting Up A Custom Domain Name for Django Development Server on a Mac</h1>
+		</div>
+		
+
+		<section class="body">
+			<p>Setting up a custom domain name for the Django development server on a Mac is a simple process that can be completed in a few steps.</p>
+<ol>
+<li>Make sure that the Django development server is running on your local machine by navigating to the root directory of your Django project and running the following command:</li>
+</ol>
+<pre tabindex="0"><code>./manage.py runserver
+</code></pre><ol start="2">
+<li>Open the terminal and edit the <code>/etc/hosts</code> file by running the command:</li>
+</ol>
+<pre tabindex="0"><code>sudo nano /etc/hosts
+</code></pre><p>This file is used to map hostnames to IP addresses on a local machine.</p>
+<ol start="3">
+<li>Add the following line to the <code>/etc/hosts</code> file, replacing <strong>myproject.local</strong> with the custom domain name that you would like to use:</li>
+</ol>
+<pre tabindex="0"><code>127.0.0.1 myproject.local
+</code></pre><ol start="4">
+<li>
+<p>Save and exit the <code>/etc/hosts</code> file.</p>
+</li>
+<li>
+<p>Open the <code>settings.py</code> file in your Django project and add the custom domain name to the <strong>ALLOWED_HOSTS</strong> list:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>ALLOWED_HOSTS = [&#39;myproject.local&#39;]
+</code></pre><p>Alternatively, you can set it to <code>ALLOWED_HOSTS = ['*']</code> for development mode.</p>
+<p>Finally, open your web browser and navigate to <a href="http://myproject.local:8000">http://myproject.local:8000</a> (or the port number you are using) to access your Django project on the custom domain name.</p>
+<h2 id="setting-up-a-custom-domain-name-using-nginx">Setting up a custom domain name using nginx</h2>
+<p>To set up a custom domain name for the Django development server on a Mac using nginx, follow these additional steps:</p>
+<ol>
+<li>Install nginx on your Mac by running the command:</li>
+</ol>
+<pre tabindex="0"><code>brew install nginx
+</code></pre><ol start="2">
+<li>Create a new nginx configuration file for your Django project by running the command:</li>
+</ol>
+<pre tabindex="0"><code>sudo nano /opt/homebrew/etc/nginx/servers/myproject.conf
+</code></pre><ol start="3">
+<li>Add the following code to the <code>myproject.conf</code> file, replacing <strong>myproject.local</strong> with the custom domain name that you would like to use:</li>
+</ol>
+<pre tabindex="0"><code>server {
+    listen 80;
+    listen [::]:80;
+    server_name myproject.local;
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+</code></pre><ol start="4">
+<li>
+<p>Save and exit the <code>myproject.conf</code> file.</p>
+</li>
+<li>
+<p>Restart nginx by running the command:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>brew services restart nginx
+</code></pre><p>Finally, open your web browser and navigate to <a href="http://myproject.local">http://myproject.local</a> to access your Django project on the custom domain name.</p>
+<h3 id="good-to-know">Good to know</h3>
+<p>To stop nginx, run the command:</p>
+<pre tabindex="0"><code>sudo brew services stop nginx
+</code></pre><p>To find the nginx configuration file path, run the command:</p>
+<pre tabindex="0"><code>nginx -t
+</code></pre>
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/nginx">nginx</a></li>
+					
+					<li><a href="/tags/django">django</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/michaelgainyo/" rel="me" title="GitHub"><i data-feather="github"></i></a>
+    <a class="border"></a><a class="soc" href="https://twitter.com/michaelgainyo/" rel="me" title="Twitter"><i data-feather="twitter"></i></a>
+    <a class="border"></a></div>
+  <div class="footer-info">
+    2023  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+
+<script>
+  feather.replace()
+</script></div>
+    </body>
+</html>
