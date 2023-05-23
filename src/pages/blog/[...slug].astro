@@ -1,18 +1,14 @@
 ---
-import { getCollection } from 'astro:content';
+import '../../styles/code.css';
 
 import Page from '../../layouts/page.astro';
 import BackLink from '../../components/link-back.astro';
 import FormattedDate from '../../components/date-formatted.astro';
 
-import '../../styles/code.css';
+import { getContent } from '../../content/utils';
 
 export async function getStaticPaths() {
-  let posts = await getCollection('blog');
-  const prod = process.env.NODE_ENV === 'production';
-  if (prod) posts = posts.filter((post) => post.data.publish === true);
-
-  return posts.map((post) => ({
+  return (await getContent('blog')).map((post) => ({
     params: { slug: post.slug },
     props: post,
   }));

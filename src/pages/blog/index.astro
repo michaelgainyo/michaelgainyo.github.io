@@ -1,11 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
 import Page from '../../layouts/page.astro';
 import FormattedDate from '../../components/date-formatted.astro';
+import { getContent } from '../../content/utils';
 
-const posts = (await getCollection('blog')).sort((a, b) =>
-  a.data.pubDate.valueOf() < b.data.pubDate.valueOf() ? 1 : -1
-);
+const posts = (await getContent('blog')).sort((a, b) => (a.data.pubDate.valueOf() < b.data.pubDate.valueOf() ? 1 : -1));
 
 const byYear = posts.reduce((acc, post) => {
   const year = post.data.pubDate.getFullYear();
@@ -41,7 +39,7 @@ const byYear = posts.reduce((acc, post) => {
                 />
                 {posts.map((post) => (
                   <div class="flex flex-col pl-10 mb-5">
-                    <a class="leading-4 text-lg -ml-2 mb-1" href={`/blog/${post.slug}/`}>
+                    <a class="leading-4 text-lg -ml-2 mb-1" href={`/blog/${post.slug}`}>
                       {post.data.title}
                     </a>
                     <div class="text-sm">
