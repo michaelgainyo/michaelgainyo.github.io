@@ -1,0 +1,88 @@
+---
+import BackLink from '../components/link-back.astro';
+import Page from '../layouts/page.astro';
+---
+
+<Page title="Bookmarks">
+  <main class="mx-auto max-w-[65ch] px-7 py-10 mb-8">
+    <header class="mb-3">
+      <h1>Bookmarks</h1>
+      <BackLink href="/blog" text="Back to blog" />
+    </header>
+
+    <ul>
+      <!-- <li>
+        <a target="_blank"
+          href=""
+          rel="nofollow noreferer"></a>
+      </li> -->
+      <li>
+        <a
+          target="_blank"
+          href="https://www.overflowedminds.net/writings/a-monorepo-of-django-postgresql-traefik-docker-compose-and"
+          rel="nofollow noreferer">A Monorepo of Django, PostgreSQL Traefik, Docker Compose and React served via S3</a
+        >
+      </li>
+      <li>
+        <a target="_blank" href="https://antfu.me/posts/why-not-prettier" rel="nofollow noreferer"
+          >Why I don't use Prettier</a
+        >
+      </li>
+      <li>
+        <a
+          target="_blank"
+          href="https://www.youtube.com/watch?v=FCyYIVfDkhY&ab_channel=LucianoRatamero"
+          rel="nofollow noreferer">Django + Vite: The simple way</a
+        >
+      </li>
+      <li>
+        <a
+          target="_blank"
+          href="https://ogzhanolguncu.com/blog/react-ssr-ssg-from-scratch#building-the-ssr"
+          rel="nofollow noreferer">Build Your Own SSR/SSG From Scratch with Vite and React</a
+        >
+      </li>
+      <li>
+        <a target="_blank" href="https://sergiodxa.com/articles/bubble-up-data-on-remix-routes" rel="nofollow noreferer"
+          >Bubble up data on Remix routes</a
+        >
+      </li>
+      <li>
+        <a
+          target="_blank"
+          href="https://www.wking.dev/library/dont-design-your-database-like-a-frontend-developer"
+          rel="nofollow noreferer">Don't design your database like a frontend developer</a
+        >
+      </li>
+
+      <li>
+        <a
+          target="_blank"
+          href="https://www.wking.dev/library/how-to-add-a-check-constraint-in-prisma"
+          rel="nofollow noreferer">How to add a check constraint in Prisma</a
+        >
+      </li>
+      <li>
+        <a
+          target="_blank"
+          href="https://www.wking.dev/library/how-to-manually-set-table-names-in-prisma-and-why-you-should"
+          rel="nofollow noreferer">How to manually set table names in Prisma and why you should</a
+        >
+      </li>
+      <li>
+        <a
+          target="_blank"
+          href="https://gist.github.com/kiliman/a9d7c874af03369a1d105a92560d89e9"
+          rel="nofollow noreferer">How to debug your server-side Remix code using VSCode</a
+        >
+      </li>
+      <li>
+        <a
+          target="_blank"
+          href="https://www.simeongriggs.dev/components-considered-harmful-for-content"
+          rel="nofollow noreferer">Prioritise content over components</a
+        >
+      </li>
+    </ul>
+  </main>
+</Page>
