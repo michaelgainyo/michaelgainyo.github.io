@@ -5,7 +5,7 @@ import UnoCSS from 'unocss/astro';
 import rehypePrettyCode from 'rehype-pretty-code';
 
 const prettyCodeOptions = {
-  theme: 'monokai',
+  theme: 'material-theme-palenight',
   onVisitLine(node) {
     if (node.children.length === 0) {
       node.children = [
@@ -36,14 +36,14 @@ const prettyCodeOptions = {
 export default defineConfig({
   site: 'https://michaelgainyo.github.io',
   integrations: [
-    UnoCSS({
-      injectReset: true,
-    }),
     mdx(),
+    UnoCSS({
+      // injectReset: true,
+    }),
     sitemap(),
   ],
   markdown: {
-    shikiConfig: { theme: 'css-variables' },
+    shikiConfig: { theme: '' },
     extendDefaultPlugins: true,
     syntaxHighlight: false,
     rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]],

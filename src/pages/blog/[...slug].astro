@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+
+import Page from '../../layouts/page.astro';
+import BackLink from '../../components/link-back.astro';
+import FormattedDate from '../../components/date-formatted.astro';
+
+import '../../styles/code.css';
+
+export async function getStaticPaths() {
+  let posts = await getCollection('blog');
+  const prod = process.env.NODE_ENV === 'production';
+  if (prod) posts = posts.filter((post) => post.data.publish === true);
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { title, pubDate } = post.data;
+const { Content } = await post.render();
+---
+
+<Page {...post.data}>
+  <main class="mx-auto max-w-[65ch] px-7 py-10 mb-8" data-blog>
+    <header class="my-8">
+      <h1>{title}</h1>
+      <FormattedDate date={pubDate} />
+    </header>
+
+    <div class="">
+      <div class="container mx-auto">
+        <div class=""></div>
+
+        <article class="container">
+          <Content />
+        </article>
+      </div>
+    </div>
+
+    <div class="py-2">
+      <BackLink href="/blog" text="Back to blog" />
+    </div>
+  </main>
+</Page>

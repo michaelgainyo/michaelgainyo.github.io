@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import Page from '../../layouts/page.astro';
+import FormattedDate from '../../components/date-formatted.astro';
+
+const posts = (await getCollection('blog')).sort((a, b) =>
+  a.data.pubDate.valueOf() < b.data.pubDate.valueOf() ? 1 : -1
+);
+
+const byYear = posts.reduce((acc, post) => {
+  const year = post.data.pubDate.getFullYear();
+  if (!acc[year]) acc[year] = [];
+
+  acc[year].push(post);
+  return acc;
+}, {} as Record<number, typeof posts>);
+---
+
+<Page title="Blog">
+  <main class="mx-auto max-w-[65ch] px-7 py-10 mb-8" data-blog>
+    <header class="mb-3">
+      <h1>Blog</h1>
+    </header>
+
+    <article>
+      {
+        Object.entries(byYear)
+          .reverse()
+          .map(([year, posts]) => {
+            return (
+              <div class="relative min-h-[10em] mb-18">
+                <div
+                  data-before={year}
+                  class:list={[
+                    'before:content-[attr(data-before)]',
+                    'before:absolute before:-z-10',
+                    'before:text-[8em] before:font-bold before:leading-none',
+                    'before:tracking-tight before:opacity-70',
+                    'before:text-gray-700/50',
+                  ]}
+                />
+                {posts.map((post) => (
+                  <div class="flex flex-col pl-10 mb-5">
+                    <a class="leading-4 text-lg -ml-2 mb-1" href={`/blog/${post.slug}/`}>
+                      {post.data.title}
+                    </a>
+                    <div class="text-sm">
+                      - <FormattedDate date={post.data.pubDate} className="text-slate-400" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            );
+          })
+      }
+    </article>
+  </main>
+</Page>

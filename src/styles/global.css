@@ -1,5 +1,9 @@
+:root {
+  --bg-color: #101525;
+}
+
 html {
-  line-height: 1.5;
+  line-height: 1.75;
   -webkit-text-size-adjust: 100%;
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -17,4 +21,54 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: 0.8888889em;
+  line-height: 1.1111111;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  line-height: 1.3333333;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 1.25em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  line-height: 1.6;
+  /* opacity: 0.7; */
+}
+
+ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+ul {
+  padding-top: 0.5rem;
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+li ul {
+  list-style-type: circle;
+}
+
+article {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+p {
+  margin: 1.25rem 0;
 }

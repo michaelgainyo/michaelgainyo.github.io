@@ -743,6 +743,7 @@ __metadata:
     "@astrojs/mdx": ^0.19.1
     "@astrojs/rss": ^2.4.1
     "@astrojs/sitemap": ^1.3.0
+    "@unocss/reset": ^0.52.3
     astro: ^2.4.1
     rehype-pretty-code: ^0.9.5
     unocss: ^0.52.3
@@ -1180,7 +1181,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unocss/reset@npm:0.52.3":
+"@unocss/reset@npm:0.52.3, @unocss/reset@npm:^0.52.3":
   version: 0.52.3
   resolution: "@unocss/reset@npm:0.52.3"
   checksum: 696a89bcc97bbe6072c4e954a5a20c9614db41101ac12462dab9ce142526a647673d72720f6536706e9ddbcc33c7eeb73c0dcc67dd45c9c60d2f63fd92f6e0d6

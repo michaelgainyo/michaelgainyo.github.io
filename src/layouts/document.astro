@@ -77,12 +77,11 @@ const jsonLD = JSON.stringify({
       )
     }
 
-    <!-- me -->
     {gh && <link href={`https://github.com/${gh}`} rel="me" />}
     {tw && <link href={`https://twitter.com/${tw}`} rel="me" />}
   </head>
 
-  <body>
+  <body class="bg-[var(--bg-color,red)] text-slate-400">
     <slot />
 
     <script type="application/ld+json" set:html={jsonLD}></script>

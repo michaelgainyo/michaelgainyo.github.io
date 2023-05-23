@@ -1,0 +1,56 @@
+div[data-rehype-pretty-code-fragment] {
+  border-radius: 0.5rem;
+  overflow: auto;
+  background-color: rgba(188, 188, 188, 0.078);
+  padding-bottom: 1rem;
+}
+
+div[data-rehype-pretty-code-title] {
+  padding: 0 12px;
+  text-align: end;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  background-color: rgba(100, 116, 139, 0.186);
+}
+
+p code {
+  text-decoration: underline dotted;
+  background-color: rgba(188, 188, 188, 0.051);
+}
+
+pre > code {
+  display: grid;
+}
+
+code > .line::before {
+  counter-increment: line;
+  content: counter(line);
+
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  text-align: right;
+  opacity: 0.5;
+}
+
+code[data-line-numbers-max-digits='2'] > .line::before {
+  width: 1rem;
+}
+
+code[data-line-numbers-max-digits='3'] > .line::before {
+  width: 1rem;
+}
+
+pre .line {
+  padding-left: 6px;
+  border-left: 2px solid transparent;
+}
+
+.line.highlighted {
+  background-color: rgba(61, 211, 113, 0.203);
+  border-left: 4px solid #2b6e0ee5;
+}
+
+code {
+  counter-reset: line;
+}
