@@ -1,0 +1,90 @@
+---
+import * as CONF from '../consts';
+
+export interface Props {
+  author?: string;
+  siteName?: string;
+  title: string;
+  description: string;
+  image?: string;
+  social?: {
+    tw?: string;
+    fb?: string;
+    ig?: string;
+    gh?: string;
+    yt?: string;
+  };
+  bodyCn?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const {
+  author,
+  siteName,
+  title = CONF.SITE_TITLE,
+  description = CONF.SITE_DESCRIPTION,
+  image = CONF.SITE_IMAGE,
+} = Astro.props;
+
+const { tw = CONF.TW, gh = CONF.GH } = Astro.props.social || {};
+
+const jsonLD = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  url: Astro.url,
+
+  // name: title,
+  // description,
+  // image,
+});
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{title}{siteName && ` | ${siteName}`}</title>
+
+    <link rel="canonical" href={canonicalURL} />
+    {author && <meta name="author" content={author} />}
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- OGraph / Fb -->
+
+    <meta property="og:type" content="website" />
+    {siteName && <meta property="og:site_name" content={siteName} />}
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={new URL(image, Astro.url)} />}
+
+    {
+      tw && (
+        <>
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta name="twitter:creator" content={`@${tw}`} />
+          <meta property="twitter:url" content={Astro.url} />
+          <meta property="twitter:title" content={title} />
+          <meta property="twitter:description" content={description} />
+          {image && <meta property="twitter:image" content={new URL(image, Astro.url)} />}
+        </>
+      )
+    }
+
+    <!-- me -->
+    {gh && <link href={`https://github.com/${gh}`} rel="me" />}
+    {tw && <link href={`https://twitter.com/${tw}`} rel="me" />}
+  </head>
+
+  <body>
+    <slot />
+
+    <script type="application/ld+json" set:html={jsonLD}></script>
+  </body>
+</html>

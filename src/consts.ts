@@ -1,5 +1,10 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+export const AUTHOR = 'Michaël Gainyo';
+export const SITE_URL = 'https://michaelgainyo.com';
 
-export const SITE_TITLE = 'HeyYo!';
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const SITE_NAME = AUTHOR;
+export const SITE_TITLE = AUTHOR;
+export const SITE_DESCRIPTION = '';
+export const SITE_IMAGE: string | undefined = undefined;
+
+export const TW = 'michaelgainyo';
+export const GH = 'michaelgainyo';

@@ -1,0 +1,15 @@
+---
+import * as CONF from '../consts';
+import Document from './document.astro';
+
+const meta = {
+  title: CONF.SITE_TITLE,
+  description: CONF.SITE_DESCRIPTION,
+  author: CONF.AUTHOR,
+  social: { tw: CONF.TW, gh: CONF.GH },
+};
+---
+
+<Document {...meta}>
+  <slot />
+</Document>
