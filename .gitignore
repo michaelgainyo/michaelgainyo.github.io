@@ -1,3 +1,5 @@
+.drafts/
+
 # build output
 dist/
 # generated types

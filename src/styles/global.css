@@ -48,6 +48,11 @@ h3 {
   /* opacity: 0.7; */
 }
 
+a {
+  color: #c792ea;
+  text-decoration: underline dotted;
+}
+
 ol {
   list-style-type: decimal;
   margin-left: 1.5rem;
