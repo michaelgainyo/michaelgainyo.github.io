@@ -45,6 +45,7 @@ const jsonLD = JSON.stringify({
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <title>{title}{siteName && ` | ${siteName}`}</title>
@@ -52,11 +53,11 @@ const jsonLD = JSON.stringify({
     <link rel="canonical" href={canonicalURL} />
     {author && <meta name="author" content={author} />}
     <meta name="title" content={title} />
-    <meta name="description" content={description} />
+    <meta name="description" content={description || ''} />
     <meta name="generator" content={Astro.generator} />
 
     <!-- OGraph / Fb -->
-
+    <meta name="og:locale" content="en" />
     <meta property="og:type" content="website" />
     {siteName && <meta property="og:site_name" content={siteName} />}
     <meta property="og:url" content={Astro.url} />
@@ -69,6 +70,7 @@ const jsonLD = JSON.stringify({
         <>
           <meta property="twitter:card" content="summary_large_image" />
           <meta name="twitter:creator" content={`@${tw}`} />
+          <meta name="twitter:site" content={`@${tw}`} />
           <meta property="twitter:url" content={Astro.url} />
           <meta property="twitter:title" content={title} />
           <meta property="twitter:description" content={description} />

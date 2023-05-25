@@ -2,20 +2,24 @@ div[data-rehype-pretty-code-fragment] {
   border-radius: 0.5rem;
   overflow: auto;
   background-color: rgba(188, 188, 188, 0.078);
-  padding-bottom: 1rem;
+  padding: 1rem 0;
 }
 
 div[data-rehype-pretty-code-title] {
   padding: 0 12px;
+  margin-bottom: 1rem;
+  margin-top: -1rem;
   text-align: end;
   font-size: 0.9rem;
   opacity: 0.6;
   background-color: rgba(100, 116, 139, 0.186);
 }
 
-p code {
-  text-decoration: underline dotted;
-  background-color: rgba(188, 188, 188, 0.051);
+p code,
+li code {
+  color: #ffcb6bf3;
+  /* text-decoration: underline dotted; */
+  /* background-color: rgba(174, 138, 9, 0.074); */
 }
 
 pre > code {
@@ -46,6 +50,9 @@ pre .line {
   border-left: 2px solid transparent;
 }
 
+.word[data-rehype-pretty-code-wrapper] {
+  background-color: rgba(61, 211, 113, 0.203);
+}
 .line.highlighted {
   background-color: rgba(61, 211, 113, 0.203);
   border-left: 4px solid #2b6e0ee5;
