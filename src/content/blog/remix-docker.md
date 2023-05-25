@@ -7,7 +7,7 @@ publish: true
 
 It's not uncommon nowadays to develop apps in vscode dev containers. It is a great way to keep your dev environment consistent across different machines and projects.
 
-Assuming you already have a Remix app running, navigate to the root of the project and run:
+Assuming you already have a Remix app set up, navigate to the root of the project and run:
 
 ```bash {1}
 docker run -it --rm -p 3000:3000 -v $(PWD):/app -w /app node:19-alpine3.16 sh
@@ -25,6 +25,8 @@ docker run -it --rm -p 3000:3000 -p 8002:8002 -v $(PWD):/app -w /app node:19-alp
 /app # yarn dev
 ```
 
+Now it does.
+
 If you've modified the `devServerPort` in your remix config, expose that port instead and update the `<LiveReload />` port accordingly.
 
 ```tsx title="app/root.tsx"
@@ -32,9 +34,7 @@ If you've modified the `devServerPort` in your remix config, expose that port in
 <LiveReload port={8002} />
 ```
 
-That's it.
-
-Now, in case the previous docker commands made zero sense, here's a quick breakdown:
+Finally, here's a quick rundown on the previous docker commands:
 
 - `docker run` is the base command for running a Docker container
 - `-it` starts the container in interactive mode
@@ -44,3 +44,5 @@ Now, in case the previous docker commands made zero sense, here's a quick breakd
 - `-w /app` sets the working directory to `/app` in the container
 - `node:19-alpine3.16` is the official Node.js image we're using
 - `sh` starts a shell inside the container
+
+That's it.
