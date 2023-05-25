@@ -2,7 +2,7 @@
 title: 'Dockerizing a remix app in development'
 description: ''
 pubDate: 'May 25 2023'
-publish: false
+publish: true
 ---
 
 It's not uncommon nowadays to develop apps in vscode dev containers. It is a great way to keep your dev environment consistent across different machines and projects.
