@@ -9,9 +9,11 @@ import Document, { type Props as DocumentProps } from './document.astro';
 export interface Props {
   index?: boolean;
   title?: string;
+  description?: string;
+  image?: string;
 }
 
-const { title, index } = Astro.props;
+const { title, index, image } = Astro.props;
 
 const meta = {
   title: title || CONF.SITE_TITLE,
@@ -22,7 +24,7 @@ const meta = {
 } satisfies DocumentProps;
 ---
 
-<Document {...meta}>
+<Document {...meta} image={image}>
   <slot />
 
   <footer class="container mx-auto text-center text-sm">

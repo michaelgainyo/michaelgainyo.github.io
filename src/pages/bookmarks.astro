@@ -49,6 +49,19 @@ const links: { href: string; text: string; priv?: boolean }[] = [
     text: 'Prioritise content over components',
   },
 ].filter((l) => (process.env.NODE_ENV === 'production' ? !l.hide : true));
+
+const tools = [
+  { href: 'https://metatags.io/', label: 'Meta tags' },
+  { href: 'https://www.opengraph.xyz/', label: 'Open Graph' },
+  { href: 'https://showcode.app/', label: 'Show code' },
+  { label: 'ssllabs', href: 'https://www.ssllabs.com/ssltest/' },
+  { href: 'https://developers.facebook.com/tools/debug/', label: 'Facebook debug tools' },
+  {
+    href: 'https://whatsmychaincert.com',
+    label: "What's My Chain Cert?",
+    text: 'Check and fix SSL certificate chain issues',
+  },
+];
 ---
 
 <Page title="Bookmarks">
@@ -57,6 +70,24 @@ const links: { href: string; text: string; priv?: boolean }[] = [
       <h1>Bookmarks</h1>
       <BackLink href="/blog" text="Back to blog" />
     </header>
+
+    <section class="my-5">
+      <h2>Debug Tools</h2>
+      <ul>
+        {
+          tools.map((t) => (
+            <li>
+              <a href={t.href} class="text-slate-500" target="_blank" rel="nofollow noreferer">
+                {t.label}
+                {t.text && ` - ${t.text}`}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <h2>Articles</h2>
 
     <ul>
       {
