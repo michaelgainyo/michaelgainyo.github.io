@@ -8,6 +8,7 @@ import rehypePrettyCode from 'rehype-pretty-code';
 export default defineConfig({
   site: 'https://michaelgainyo.github.io',
   integrations: [mdx(), UnoCSS(), sitemap()],
+  server: { port: 3010, host: true },
   markdown: {
     shikiConfig: { theme: '' },
     extendDefaultPlugins: true,
