@@ -1,8 +1,7 @@
 ---
 title: 'Django Docker Traefik'
 description: ''
-pubDate: 'May 20 2023'
-heroImage: ''
+published: 'May 20 2023'
 ---
 
 https://testdriven.io/blog/django-docker-traefik/

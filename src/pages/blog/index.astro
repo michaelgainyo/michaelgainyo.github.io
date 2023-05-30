@@ -3,10 +3,12 @@ import Page from '../../layouts/page.astro';
 import FormattedDate from '../../components/date-formatted.astro';
 import { getContent } from '../../content/utils';
 
-const posts = (await getContent('blog')).sort((a, b) => (a.data.pubDate.valueOf() < b.data.pubDate.valueOf() ? 1 : -1));
+const posts = (await getContent('blog')).sort((a, b) =>
+  a.data.published.valueOf() < b.data.published.valueOf() ? 1 : -1
+);
 
 const byYear = posts.reduce((acc, post) => {
-  const year = post.data.pubDate.getFullYear();
+  const year = post.data.published.getFullYear();
   if (!acc[year]) acc[year] = [];
 
   acc[year].push(post);
@@ -43,7 +45,7 @@ const byYear = posts.reduce((acc, post) => {
                       {post.data.title}
                     </a>
                     <div class="text-sm">
-                      - <FormattedDate date={post.data.pubDate} className="text-slate-400" />
+                      - <FormattedDate date={post.data.published} className="text-slate-400" />
                     </div>
                   </div>
                 ))}
