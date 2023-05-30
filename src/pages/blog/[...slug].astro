@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 const post = Astro.props;
-const { title, pubDate } = post.data;
+const { title, published } = post.data;
 const { Content } = await post.render();
 ---
 
@@ -23,7 +23,7 @@ const { Content } = await post.render();
   <main class="mx-auto max-w-[65ch] px-7 py-10 mb-8" data-blog>
     <header class="my-8">
       <h1>{title}</h1>
-      <FormattedDate date={pubDate} />
+      <FormattedDate date={published} />
     </header>
 
     <div class="">

@@ -59,6 +59,10 @@ ol {
   padding-top: 0.5rem;
 }
 
+ol + div {
+  margin: 2rem 0;
+}
+
 ul {
   padding-top: 0.5rem;
   list-style-type: disc;

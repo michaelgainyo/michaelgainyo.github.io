@@ -1,9 +1,13 @@
 ---
 publish: true
+
 title: 'Dockerizing a remix app in development'
 description: ''
 image: '/dockerize-remix-app.jpg'
-pubDate: 'May 25 2023'
+
+published: 'May 25 2023'
+created: 'May 25 2023'
+
 tags: ['docker', 'remix']
 ---
 

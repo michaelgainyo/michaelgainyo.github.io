@@ -4,11 +4,11 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
-    pubDate: z
+    published: z
       .string()
       .or(z.date())
       .transform((val) => new Date(val)),
-    updatedDate: z
+    updated: z
       .string()
       .optional()
       .transform((str) => (str ? new Date(str) : undefined)),
