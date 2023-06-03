@@ -13,12 +13,12 @@ export interface Props {
   image?: string;
 }
 
-const { title, index, image } = Astro.props;
+const { title, index, image, description } = Astro.props;
 
 const meta = {
   title: title || CONF.SITE_TITLE,
   siteName: index ? undefined : CONF.SITE_NAME,
-  description: CONF.SITE_DESCRIPTION,
+  description: description ?? CONF.SITE_DESCRIPTION,
   author: CONF.AUTHOR,
   social: { tw: CONF.TW, gh: CONF.GH },
 } satisfies DocumentProps;
