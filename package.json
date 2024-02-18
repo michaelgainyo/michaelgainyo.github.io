@@ -13,11 +13,11 @@
     "@astrojs/mdx": "latest",
     "@astrojs/rss": "latest",
     "@astrojs/sitemap": "latest",
-    "astro": "^4.4.0"
+    "astro": "^4.4.0",
+    "rehype-pretty-code": "^0.9.5"
   },
   "devDependencies": {
     "@unocss/reset": "^0.58.5",
-    "rehype-pretty-code": "^0.9.5",
     "unocss": "^0.58.5"
   }
 }
