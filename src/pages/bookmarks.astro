@@ -2,8 +2,16 @@
 import BackLink from '../components/link-back.astro';
 import Page from '../layouts/page.astro';
 
+
+
 const links: { href: string; text: string; priv?: boolean }[] = [
   // { href: '', text: '' },
+  { href: 'http://orta.io/notes/js/a-little-static-site', text: 'A small static page generator for Node' },
+  { href: 'https://backendclub.com/articles/magic-link-login-django/', text: 'Magic link login in Django' },
+  {
+    href: 'https://mattsegal.dev/nginx-django-reverse-proxy-config.html',
+    text: 'A breakdown of how NGINX is configured with Django',
+  },
   {
     href: 'https://www.youtube.com/watch?v=WtP5UCcwphw&ab_channel=NetSec',
     text: 'Get Free Microsoft 365 E5 Developer Subscription with Your Own Domain Name',

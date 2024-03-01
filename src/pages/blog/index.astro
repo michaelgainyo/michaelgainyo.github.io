@@ -46,7 +46,8 @@ const isdev = process.env.NODE_ENV === 'development';
                     <a class="leading-4 text-lg -ml-2 mb-1" href={`/blog/${post.slug}`}>
                       {post.data.title}
                     </a>
-                    <div class="text-sm">
+
+                    <div class="text-sm flex space-x-1">
                       - <FormattedDate date={post.data.published} className="text-slate-400" />
                       {isdev && post.data.publish && (
                         <span class="px-2 text-green-700 bg-green-950 rounded-full font-semibold">published</span>

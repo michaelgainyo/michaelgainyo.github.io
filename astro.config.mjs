@@ -6,6 +6,7 @@ import rehypePrettyCode from 'rehype-pretty-code';
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',
   site: 'https://michaelgainyo.github.io',
   integrations: [mdx(), UnoCSS(), sitemap()],
   server: { port: 3010, host: true },
