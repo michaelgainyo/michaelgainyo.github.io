@@ -10,14 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "latest",
-    "@astrojs/rss": "latest",
-    "@astrojs/sitemap": "latest",
-    "astro": "^4.4.0",
-    "rehype-pretty-code": "^0.9.5"
+    "@astrojs/mdx": "^2.1.1",
+    "@astrojs/rss": "^4.0.5",
+    "@astrojs/sitemap": "^3.1.1",
+    "astro": "^4.4.15",
+    "rehype-pretty-code": "^0.13.0"
   },
   "devDependencies": {
     "@unocss/reset": "^0.58.5",
+    "shiki": "^1.1.7",
     "unocss": "^0.58.5"
   }
 }
