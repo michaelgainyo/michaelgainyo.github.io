@@ -2,7 +2,7 @@
 publish: true
 title: How to deploy your Astro static site with Nginx and Docker
 description: Learn to deploy an Astro static site with Nginx and Docker in this step-by-step tutorial. Boost your site's performance and scalability while simplifying your development workflow.
-image: '/deploy-astro-nginx-docker.jpg'
+image: "/deploy-astro-nginx-docker.jpg"
 published: May 30 2023
 created: May 27 2023
 ---
